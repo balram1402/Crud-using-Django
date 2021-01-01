@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.block{
+			margin-top: 3%;
+			font-size: 24px;
+			border:2px solid black;
+			border-radius: 20px;
+			margin-left: 4%;
+			margin-right: 30%;
+			height: 5rem; 
+			
+		}
+		.block input{
+			margin-top: 2rem;
+			font-size: 17px;
+		}
+		#subs,#subss{
+			font-size: 26px;
+			background-color: skyblue;
+			border-color:white;
+		}
+	
+		#subs {
+			padding: 6px;
+		}
+		#subs:focus{
+			outline:none;
+		}
+		.data{
+			margin-top: 1.4rem;
+			margin-left: -16rem;
+		}
+	
+		.email{
+			margin-left: 4rem;
+		}
+	</style>
+	</head>
+	<body>
+		<center>
+			
+			
+                {% for Users in Users %}
+                <div class = "block">
+
+                    <div class = "data">
+						<span class = "username"> Username : {{ Users.username }}</span>
+
+						<span class = "email"> Email : {{ Users.email }}</span> 
+						<a href = "{% url 'delete' Users.id %}"><button id = "subss">Delete</button></a>
+					</div>
+                </div>  
+                {% endfor %}
+
+
+			
+		</center>
+	</body>
+</html>
