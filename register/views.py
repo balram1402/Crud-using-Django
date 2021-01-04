@@ -39,3 +39,6 @@ def delete(request,id):
     Del = User.objects.filter(pk=id)
     Del.delete()
     return HttpResponse('User Data Deleted:(')
+
+
+
